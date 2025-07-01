@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Final Project CSS Designs.css">
+  <meta charset="utf-8">
+  <title>DISTED Alumni Management System</title>
+</head>
+<body>
+<header>
+  <img src="Disted Logo(1).jpg" alt="Disted Logo">
+  <p class="p1">ALUMNI PORTAL</p>
+</header>
+
+<div class="container">
+  <form id="loginpage" action="LogIn.php" method="POST">
+    <table>
+      <tr>
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" id="username" name="username" size="50" required></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" id="password" name="password" size="50" required></td>
+        <tr>
+		  <td></td>
+		  <td><input type="checkbox" id="show-password-btn" onclick="showPassword()"><label for="showpassword">Show Password?</label></td>
+        </tr>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><p>Don't have an account? <a href="Sign Up Page.html">Sign up</a></p></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="button-container">
+            <button type="submit">Log In</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div id="footer-placeholder"></div>
+<script src="Button Scripts.js"></script>
+</body>
+</html>

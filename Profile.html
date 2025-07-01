@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="Final Project CSS Designs.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-12 profile-badge">
+                <div class="profile-pic">
+                    <img alt="User Pic" src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" id="profile-image1" height="200">
+                </div>
+                <div class="user-detail text-center">
+                    <p><strong>Name (IC):</strong> <span id="name"></span></p>
+                    <p><strong>Username:</strong> <span id="username"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Age:</strong> <span id="age"></span></p>
+                    <p><strong>Gender:</strong> <span id="gender"></span></p>
+                    <p><strong>Phone Number:</strong> <span id="phone_number"></span></p>
+                    <p><strong>Address:</strong> <span id="address"></span></p>
+                    <p><strong>Student ID:</strong> <span id="student_id"></span></p>
+                    <p><strong>Subject Code:</strong> <span id="subject_code"></span></p>
+                    <p><strong>Enrollment Date:</strong> <span id="enrollment_date"></span></p>
+                </div>
+                <input type="file" id="profile-image-upload" style="display:none;" onchange="uploadProfilePicture(event)">
+                <button class="btn btn-info" onclick="document.getElementById('profile-image-upload').click();">Update Profile Picture</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetch user profile
+        function fetchUserProfile() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "profile.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        document.getElementById("name").innerText = data.name_as_per_ic;
+                        document.getElementById("username").innerText = data.username;
+                        document.getElementById("email").innerText = data.email;
+                        document.getElementById("age").innerText = data.age;
+                        document.getElementById("gender").innerText = data.gender;
+                        document.getElementById("phone_number").innerText = data.phone_number;
+                        document.getElementById("address").innerText = data.address;
+                        document.getElementById("student_id").innerText = data.student_id;
+                        document.getElementById("subject_code").innerText = data.subject_code;
+                        document.getElementById("enrollment_date").innerText = data.enrollment_date;
+
+                        if (data.profile_picture) {
+                            document.getElementById("profile-image1").src = data.profile_picture;
+                        }
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function uploadProfilePicture(event) {
+            var formData = new FormData();
+            var file = event.target.files[0];
+            formData.append("profile_picture", file);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "profile.php", true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.error) {
+                        alert(data.error);
+                    } else if (data.success) {
+                        alert(data.success);
+                        document.getElementById("profile-image1").src = data.profile_picture; 
+                    }
+                }
+            };
+
+            xhr.send(formData); 
+        }
+
+        window.onload = fetchUserProfile;
+    </script>
+
+    <a href="logout.php">Logout</a>
+</body>
+</html>

@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* CSS Document */
+.footer-container {
+  background-image: url(https://www.disted.edu.my/wp-content/uploads/2018/09/footer-bg.png);
+  background-position: -40px 20px;
+  background-repeat: no-repeat;
+  background-color: #1d2843; 
+  padding-bottom: 4px; 
+  padding-top: 40px;
+  font-family: "Montserrat",sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+#footer-placeholder {
+  clear: both;
+  position: relative;
+}
+
+footer-1{
+	line-height: 1.6;
+}
+
+.footer {
+  width: 80%; 
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px 0;
+  border-radius: 5px;
+
+}
+
+.footer-heading {
+  flex-direction: column;
+  margin-right: 20px;
+  flex: 1; 
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  line-height: 19.2px;
+  position: static;
+  page-title-display: block;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer-heading a {
+  color: white;
+  text-decoration: none; 
+  margin: 5px 0;
+}
+
+.footer-heading a:hover {
+  	color: #dfb865;
+	text-decoration: none; 
+	transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    width: 100%; 
+  }
+  .footer-heading {
+    margin-right: 0;
+  }
+}
+
+h3{
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+  color: #dfb865;
+}
+
+.fa_ul {
+    list-style-type: none; 
+    position: relative;
+    margin-bottom: 3px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.fa_ul li {
+    position: relative;
+    margin-bottom: 3px;
+    padding-left: 0; 
+    margin-left: 0;  
+    display: flex;   
+    align-items: center;
+	justify-content: flex-start;
+}
+
+.fa_ul li::before {
+    content: ''; 
+    position: relative;   
+    width: 20px; 
+    height: 20px;
+    margin-right: 10px;   
+    background-size: cover;
+	background-position: center;
+}
+
+.fa_ul li:nth-child(1)::before {
+    background-image: url('phone-call.png');
+}
+
+.fa_ul li:nth-child(2)::before {
+    background-image: url('fax.png');
+}
+
+.fa_ul li:nth-child(3)::before {
+    background-image: url('envelope.png');
+}
+
+.fa_ul li:nth-child(4)::before {
+    background-image: url('whatsapp.png');
+}
+
+.fa_ul li:nth-child(5)::before {
+    background-image: url('clock-three.png');
+}
+
+.fa_ul li:last-child {
+    margin-bottom: 0; 
+}
+
+.fa_ul li:nth-child(6), 
+.fa_ul li:nth-child(7), 
+.fa_ul li:nth-child(8) {
+    margin-top: 5px;  
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.list{
+	list-style-type: none;
+	position: relative;
+	margin-bottom: 0px;
+	padding-left: 0;
+}
+
+li{
+	margin-bottom: 7px;
+}
+
+#field1{
+	grid-column: span 12;
+	box-sizing: border-box;
+	line-height: 1.6;
+	display: inline;
+	border-radius: 5px;
+  	padding: 10px; 
+}
+
+#button{
+	border-radius: 5px;
+}
+
+img{
+	margin-bottom: 15px;
+	width: 385;
+	height: 30px;
+	max-width: 100%;
+	
+}

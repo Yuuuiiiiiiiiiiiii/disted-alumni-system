@@ -1,0 +1,345 @@
+/* ================================================
+   feedback.css
+   Shared styles for all Feedback & Review pages
+================================================ */
+
+/* ===== Global Button Styles (reuse from donation.css) ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .btn-back {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-back:hover {
+    background-color: #5a6268;
+  }
+  
+  .btn-submit {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-submit:hover {
+    background-color: #218838;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ===== Containers & Typography ===== */
+  .feedback-container,
+  .feedback-list-container,
+  .feedback-form-container,
+  .feedback-success-container,
+  .feedback-history-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Section Titles */
+  .feedback-container h2,
+  .feedback-list-container h2,
+  .feedback-form-container h2,
+  .feedback-history-container h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #222;
+  }
+  
+  /* Section Descriptions */
+  .feedback-desc,
+  .feedback-list-container p,
+  .feedback-success-container p,
+  .feedback-history-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #555;
+  }
+  
+  /* ================================================
+     Section: feedback_list.php
+  =============================================== */
+  /* Event Cards Grid */
+
+  .feedback-list-container img{
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .feedback-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px; 
+  }
+  
+  .event-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    width: calc(33.333% - 50px); 
+    min-width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+  }
+  
+  .event-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .event-info {
+    padding: 12px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-title {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: #222;
+  }
+  
+  .event-date {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #555;
+  }
+  
+  .event-desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #333;
+    flex: 1;
+  }
+  
+  .event-actions {
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .btn-feedback {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .btn-feedback:hover {
+    background-color: #117a8b;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .event-card {
+      width: calc(50% - 10px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .event-card {
+      width: 100%;
+    }
+  }
+  
+  /* ================================================
+     Section: feedback_form.php
+  =============================================== */
+  .feedback-form-container form {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .feedback-form-container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+  .feedback-form-container .required {
+    color: #d00;
+  }
+
+  .event-header {
+    text-align:center; 
+    margin-bottom:20px;
+  }
+
+  .event-header img {
+    display: block;
+    max-width: 100%;    /* never exceed its container’s width */
+    width: 100%;        /* fill the container horizontally */
+    height: auto;       /* keep original aspect ratio */
+    border-radius: 6px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+    margin-bottom: 12px;
+  }
+
+  
+  
+  .feedback-input,
+  .feedback-textarea,
+  .feedback-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .feedback-textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .validation-message {
+    font-size: 12px;
+    color: #d00;
+    margin-top: -12px;
+    margin-bottom: 12px;
+  }
+  
+  /* Back button at top */
+  .back-button-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Feedback form buttons */
+  .feedback-submit-group {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* ================================================
+     Section: feedback_success.php
+  =============================================== */
+  .feedback-icon {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .feedback-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .success-title {
+    font-size: 26px;
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 10px;
+    
+  }
+  
+  .success-desc {
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+
+    margin-bottom: 20px;
+  }
+  
+  .feedback-summary {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 24px;
+
+  }
+  
+  .feedback-summary p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #333;
+  }
+  
+  .success-buttons {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  
+  /* ================================================
+     Section: feedback_history.php
+  =============================================== */
+  .feedback-history-container .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  .feedback-history-container th,
+  .feedback-history-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .feedback-history-container th {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .feedback-history-container tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .history-note,
+  .no-feedback {
+    font-size: 14px;
+    text-align: center;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .history-back-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
