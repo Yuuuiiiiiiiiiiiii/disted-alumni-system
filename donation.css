@@ -267,8 +267,8 @@
   }
   
   .form-campaign-image {
-    width: 90vw;       /* 90% of the viewport width */
-    max-width: 500px;  /* but never more than 500px */
+    width: 90vw;       
+    max-width: 500px;  
     height: auto;
     object-fit: cover;
     border-radius: 6px;
@@ -336,10 +336,9 @@
     text-align: center;
   }
   .success-icon img {
-    display: inline-block; /* or block */
+    display: inline-block;
     max-width: 100px;
     height: 100px;
-    /* margin: 0 auto; if you set display:block */
   }
   
   .success-title {

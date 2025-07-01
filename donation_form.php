@@ -38,7 +38,7 @@ if ($conn->connect_error) {
 
 $campaignId = isset($_GET['campaign_id']) ? intval($_GET['campaign_id']) : 0;
 $campaignTitle = "XXX Campaign";
-$campaignImagePath = "";  // 新增变量
+$campaignImagePath = "";  
 if ($campaignId > 0) {
     $stmt = $conn->prepare("SELECT title, image_path FROM campaigns WHERE campaign_id = ?");
     $stmt->bind_param("i", $campaignId);

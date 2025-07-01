@@ -73,8 +73,6 @@ if ($donorId > 0) {
   <h2 class="history-title">Your Donation History</h2>
 
   <?php if ($userEmail === ''): ?>
-    <!-- <p class="history-note">Please provide your email address in the URL to view history.</p> -->
-    <!-- <p class="history-note">Example: <code>?email=example@example.com</code></p> -->
 
   <?php elseif ($donorId === 0): ?>
     <p class="no-records">No donation records found for "<?php echo htmlspecialchars($userEmail); ?>".</p>

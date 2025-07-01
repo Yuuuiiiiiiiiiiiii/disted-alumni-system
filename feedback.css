@@ -1,9 +1,4 @@
-/* ================================================
-   feedback.css
-   Shared styles for all Feedback & Review pages
-================================================ */
-
-/* ===== Global Button Styles (reuse from donation.css) ===== */
+/* feedback.css */
 .btn {
     display: inline-block;
     padding: 10px 16px;
@@ -77,10 +72,7 @@
     color: #555;
   }
   
-  /* ================================================
-     Section: feedback_list.php
-  =============================================== */
-  /* Event Cards Grid */
+ /* feedback_list */
 
   .feedback-list-container img{
     height: 300px;
@@ -179,9 +171,8 @@
     }
   }
   
-  /* ================================================
-     Section: feedback_form.php
-  =============================================== */
+  /* feedback_form.php */
+
   .feedback-form-container form {
     background-color: #fff;
     border: 1px solid #eee;
@@ -208,9 +199,9 @@
 
   .event-header img {
     display: block;
-    max-width: 100%;    /* never exceed its container’s width */
-    width: 100%;        /* fill the container horizontally */
-    height: auto;       /* keep original aspect ratio */
+    max-width: 100%;    
+    width: 100%;       
+    height: auto;      
     border-radius: 6px; 
     box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
     margin-bottom: 12px;
@@ -253,9 +244,8 @@
     margin-top: 20px;
   }
   
-  /* ================================================
-     Section: feedback_success.php
-  =============================================== */
+  /* feedback_success.php */
+ 
   .feedback-icon {
     text-align: center;
     margin-bottom: 16px;
@@ -304,9 +294,8 @@
   }
 
   
-  /* ================================================
-     Section: feedback_history.php
-  =============================================== */
+  /* feedback_history.php */
+  
   .feedback-history-container .history-table {
     width: 100%;
     border-collapse: collapse;
